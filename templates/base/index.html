@@ -1,0 +1,49 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+{% block content %}
+
+<section class="beer-container">
+    <div class="pic">
+        <div class="mug">
+            <div class="beer"></div>
+        </div>
+        <div class="bubble"></div>
+        <div class="small-bubbles"></div>
+        <div class="drip"></div>
+    </div>
+    <div class="desc">
+        <span class="main-title">
+            <p>한잔 해~ </p>
+        </span>
+        <span class="sub-title">
+        </span>
+    </div>
+    <div class="container">
+        <span id="my-element"></span>
+    </div>
+</section>
+
+<section class="second">
+    <div class="desc second-desc">
+        <p>당신의 하루는 어떠셨나요?</p>
+        <p>기뻤나요? 슬펐나요?</p>
+        <p>술 한잔과 함께라면</p>
+        <p>충분히 추억할만한 하루였지 않았을까요?</p>
+        <p>당신의 하루의 끝을 남겨봐요.</p>
+    </div>
+</section>
+
+<section class="third">
+    <div class="third-card">
+        <img src="../../static/img/rating.png" alt="">
+        <p>오늘 마신 술과 해당 술에대한 평가를 해주세요!</p>
+    </div>
+    <div class="third-card">
+        <img src="../../static/img/rating.png" alt="">
+        <p>기록을 분석해 </p>
+    </div>
+    <div class="third-card"></div>
+</section>
+
+{% endblock %}
