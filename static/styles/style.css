@@ -12,6 +12,7 @@
 
 html {
   font-family: 'nanum';
+  cursor: url(../cursor/cursor.cur), auto;
 }
 
 body {
