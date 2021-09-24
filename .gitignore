@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,django,python
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,django,python
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,venv,django
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,python,venv,django
 
 ### Django ###
 *.log
@@ -214,6 +214,18 @@ cython_debug/
 
 # Cython debug symbols
 
+### venv ###
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+pip-selfcheck.json
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -230,8 +242,6 @@ cython_debug/
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,django,python0
-
 ### venv ###
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
@@ -246,4 +256,10 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 
-# End of https://www.toptal.com/developers/gitignore/api/venv
+### VirtualEnv ###
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+
+# End of https://www.toptal.com/developers/gitignore/api/virtualenv,venv
+
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,venv,django
