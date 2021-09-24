@@ -1,6 +1,29 @@
 "use strict";
 
+
+
 (function() {
+    
+    // loader
+
+    document.onreadystatechange = function() {
+        const container = document.querySelector('.container');
+        const loader = document.querySelector('.loader');
+
+        console.log(loader);
+
+        if (document.readyState !== "complete") {
+            container.style.display = "none";
+            loader.style.display = "flex";
+        } else {
+            console.log('done');
+            container.style.display = "block";
+            loader.style.display = "none";
+        }
+    };
+
+
+    // typlet
     
     (function start() {
         new TypeIt(".sub-title", {

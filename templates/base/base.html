@@ -8,39 +8,98 @@
   <title>{% block title%}한잔 해{% endblock %}</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}"/>
+  <!-- font awesome -->
+  <script defer src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
   <!-- reset -->
   <link rel="stylesheet" type="text/css" href="{% static 'styles/reset.css' %}" />
+  <!-- w3 css-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,500&display=swap">
   <!-- style -->
   <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}" />
+  <!-- w3 js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- js -->
   <script defer src="https://unpkg.com/typeit@8.0.2/dist/index.umd.js"></script>
-  <script defer src="{% static 'js/app.js' %}"></script>  
+  <script defer src="{% static 'js/app.js' %}"></script>
 </head>
 
 <body>
-  <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">Feeds</a>
-  <a href="#contact">Alocohol converter</a>
-  <div class="dropdown">
-    <button class="dropbtn">Dropdown 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </div> 
-  <a href="#about">My page</a>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-</div>
+
 
 <div class="container">
-  {% block content %} 
-  {% endblock %}  
-</div>
 
+  <!-- nav -->
+
+  <nav class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">Feeds</a>
+    <a href="#contact">Alocohol converter</a>
+    <div class="dropdown">
+      <button class="dropbtn">Dropdown 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div> 
+    <a href="#about">My page</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </nav>
+
+  <!-- content -->
+
+  {% block content %} 
+  {% endblock %}
+
+  <!-- footer -->
+
+  <div class="toaster">
+    <div class="wrapper">
+        <header class="cta_header">
+            <h1>Project Contributors Info</h1><svg class="expand_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+                <path d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+        </header>
+        <div class="airplane_icon_wrapper airplane_left"><svg class="airplane_icon" viewBox="0 0 24 24">
+                <path d="M21,16V14L13,9V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V9L2,14V16L10,13.5V19L8,20.5V22L11.5,21L15,22V20.5L13,19V13.5L21,16Z"></path>
+            </svg></div>
+        <div class="airplane_icon_wrapper airplane_right"><svg class="airplane_icon" viewBox="0 0 24 24">
+                <path d="M21,16V14L13,9V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V9L2,14V16L10,13.5V19L8,20.5V22L11.5,21L15,22V20.5L13,19V13.5L21,16Z"></path>
+            </svg></div>
+        <div>
+          <div>LikeLion-hackathon/hanjan-hae<a href="https://github.com/likelion-kookmin/It-s_okay"><i class="icon ion-social-github"></i></a></div>
+          <div><b>Contributors : </b><br>
+            <p>Seunghwan Lee<a href="https://github.com/kkIIun"><span class="iconify" data-icon="bi:github"></span></a></p>
+            <p>Seunghwan Lee<a href="https://github.com/kkIIun"><span class="iconify" data-icon="bi:github"></span></a></p>
+            <p>Seunghwan Lee<a href="https://github.com/kkIIun"><span class="iconify" data-icon="bi:github"></span></a></p>
+            <p>Seunghwan Lee<a href="https://github.com/kkIIun"><span class="iconify" data-icon="bi:github"></span></a></p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- Loader -->
+
+  <div class="loader">
+    <div class="glass-wrapper">
+        <div class="glass">
+            <div class="beer2">
+                <div class="foam"><span class="foambubble"></span><span class="foambubble"></span><span class="foambubble"></span><span class="foambubble"></span><span class="foambubble"></span></div>
+                <div class="bubbles"><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span></div>
+            </div>
+        </div>
+        <div class="foamtop"><span class="ft-bubble"></span><span class="ft-bubble"></span><span class="ft-bubble"></span><span class="ft-bubble"></span></div>
+        <div class="coaster"></div>
+    </div>
+    <div class="disclaimer">
+        <p>👋 Pouring some beer... :)</p>
+    </div>
+    </div>
+
+
+</div>
 
 <script>
   function myFunction() {
