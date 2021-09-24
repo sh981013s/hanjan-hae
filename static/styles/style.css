@@ -16,11 +16,12 @@ html {
 
 body {
   font-family: 'nanum';
+  background-color: #E1D1E9;
 }
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #EAC3FA;
 }
 
 .topnav a {
@@ -34,7 +35,7 @@ body {
 }
 
 .active {
-  background-color: #04AA6D;
+  background-color: #EAC3FA;
   color: white;
 }
 
