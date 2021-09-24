@@ -1,7 +1,21 @@
-body {margin:0;font-family:Arial}
+@font-face {
+  font-family: 'nanum';
+  src: url('../fonts/nanum/NanumGothicCoding.ttf')
+}
 
-p {
-  color: red;
+* {
+  font-family: 'nanum';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'nanum';
+}
+
+body {
+  font-family: 'nanum';
 }
 
 .topnav {
