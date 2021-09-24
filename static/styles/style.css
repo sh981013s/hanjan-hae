@@ -18,11 +18,20 @@
 html {
   font-family: 'nanum';
   cursor: url(../cursor/cursor.cur), auto;
+  position: relative;
 }
 
 body {
-  font-family: 'nanum';
+  font-family: 'nanum' !important;
   background-color: #E1D1E9;
+  /* overflow-y: hidden; */
+}
+
+.container {
+  /* min-height: 100vh; */
+  font-family: 'nanum';
+  position: relative;
+  overflow-y: hidden;
 }
 
 .topnav {
@@ -61,7 +70,6 @@ body {
   color: white;
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit;
   margin: 0;
 }
 
@@ -163,10 +171,8 @@ body {
 
 .pic {
   display: block;
-  width: 100%;
-  margin-left: 45%;
   margin-bottom: 2rem;
-  transform: translateX(-11%);
+  transform: translateX(26%);
 }
 
 .main-title p {
@@ -327,9 +333,9 @@ body {
   align-items: center;
   height: 100vh;
   background-image: url(../img/night_bg_2.gif);
-  background-color: #000; /* Used if the image is unavailable */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-color: #000; 
+  background-repeat: no-repeat;
+  background-size: cover; 
 }
 
 .second .desc {
@@ -351,10 +357,7 @@ body {
   align-items: center;
   padding: 10% 10% 10% 10%;
   height: 100%;
-}
-
-.third-card {
-  /* width: 100%; */
+  margin-bottom: 6%;
 }
 
 .third-card img{
@@ -371,3 +374,134 @@ body {
   line-height: 1.2;
 }
 
+/* footer */
+
+
+.toaster {
+  width: 100vw;
+  background-color: #02324a;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  padding: 0 20px;
+  transition: height 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+  font-family: 'nanum';
+
+}
+.toaster.is_open {
+  height: 320px;
+}
+.toaster h1 {
+  font-size: 1.1rem;
+  margin: 0.1rem 0;
+}
+.toaster header {
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.toaster .wrapper {
+  width: 100%;
+  display: grid;
+  position: absolute;
+  grid-template-rows: 60px 1fr 1fr;
+  height: 100%;
+  position: relative;
+}
+.airplane_icon {
+  fill: #fff;
+  width: 40px;
+  height: auto;
+  display: block;
+  width: 32px;
+  height: auto;
+}
+.airplane_icon_wrapper {
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+}
+.airplane_icon_wrapper.airplane_left {
+  left: 50px;
+}
+.airplane_icon_wrapper.airplane_left.is_moving {
+  opacity: 1;
+  animation: flyby_left 1s ease-in forwards;
+}
+.airplane_icon_wrapper.airplane_right {
+  right: 160px;
+}
+.airplane_icon_wrapper.airplane_right.is_moving {
+  animation: flyby_right 1s ease-in forwards;
+}
+.cta {
+  letter-spacing: 0.07rem;
+  background-color: #337a96;
+  border-color: #337a96;
+  display: block;
+  color: #fff;
+  border-radius: 4px;
+  padding: 16px 12px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 100%;
+  margin: 20px 0 0;
+  transition: all 0.3s ease-in;
+}
+.cta:hover, .cta:active, .cta:focus {
+  background-color: #49a1c3;
+  border-color: #49a1c3;
+}
+.expand_icon {
+  fill: #fff;
+  width: 30px;
+  height: auto;
+  transition: transform 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+.expand_icon.is_reversed {
+  transform: rotate(180deg);
+}
+@keyframes flyby_left {
+  0% {
+    transform: translateY(0%) translateX(-5%) rotate(-5deg) scale(0);
+ }
+  10% {
+    transform: translateY(-80%) translateX(-7%) rotate(-10deg) scale(1);
+ }
+  25% {
+    transform: translateY(-200%) translateX(-8%) rotate(-15deg) scale(1.1);
+ }
+  50% {
+    transform: translateY(-250%) translateX(10%) rotate(-20deg) scale(1.2);
+ }
+  80% {
+    transform: translateY(-680%) translateX(-100%) rotate(-40deg) scale(0);
+ }
+  100% {
+    transform: translateY(-870%) translateX(-340%) rotate(-55deg) scale(0.8);
+ }
+}
+@keyframes flyby_right {
+  0% {
+    opacity: 1;
+    transform: translateX(-5%) translateY(-70) rotate(5deg) scale(0);
+ }
+  10% {
+    transform: rotate(8deg) scale(1);
+ }
+  25% {
+    transform: translateY(-200%) translateX(50%) rotate(10deg) scale(1.2);
+ }
+  50% {
+    transform: translateY(-250%) translateX(80%) rotate(20deg);
+ }
+  80% {
+    transform: translateY(-680%) translateX(380%) rotate(45deg) scale(0.9);
+ }
+  100% {
+    transform: translateY(-950%) translateX(620%) rotate(65deg);
+ }
+}
