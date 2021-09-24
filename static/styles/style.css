@@ -12,27 +12,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 10px;
 }
 
 html {
   font-family: 'nanum';
   cursor: url(../cursor/cursor.cur), auto;
   position: relative;
+  font-size: 12px;
+  background-color: #E6DDE9;
 }
 
 body {
   font-family: 'nanum' !important;
-  background-color: #E1D1E9;
-  /* overflow-y: hidden; */
 }
 
 .container {
-  /* min-height: 100vh; */
   font-family: 'nanum';
   position: relative;
   overflow-y: hidden;
-  /* display: none; */
+  background-color: #E1D1E9;
 }
 
 .topnav {
@@ -152,6 +150,14 @@ body {
   align-content: center;
 }
 
+.first-beer {
+  width: 100vh;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center; */
+}
+
 .beer, .bubble, .small-bubbles, .drip {
   position: absolute;
 }
@@ -173,7 +179,7 @@ body {
 .pic {
   display: block;
   margin-bottom: 2rem;
-  transform: translateX(26%);
+  transform: translateX(39%);
 }
 
 .main-title p {
@@ -358,7 +364,14 @@ body {
   align-items: center;
   padding: 10% 10% 10% 10%;
   height: 100%;
-  margin-bottom: 6%;
+  margin-bottom: 8%;
+}
+
+.third-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
 }
 
 .third-card img{
@@ -367,12 +380,14 @@ body {
   height: auto;
   border-radius: 16%;
   margin-bottom: 5%;
+  
 }
 
 .third-card p {
   margin-bottom: 5%;
   text-align: center;
   line-height: 1.2;
+  height: 10vh;
 }
 
 /* footer */
@@ -509,10 +524,7 @@ body {
 
 /* Loader */
 
-body {
-  margin: 0;
-  padding: 0;
-}
+
 .loader {
   position: absolute;
   top: 0;
@@ -717,4 +729,39 @@ body {
 }
 .disclaimer a {
   color: white;
+}
+
+
+/* media queries */
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  html {
+    font-size: 30px;
+  }
+}
+
+/* // Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .first-beer {
+    margin-top: 70px;
+  }
+  body {
+    padding: 0 10%;
+  }
+}
+
+/* // Extra large devices (macbook 13', 1200px and up) */
+@media (min-width: 1366px) {
+  .third {
+    height: 100vh;
+  }
+  .first-beer {
+    margin-top: 90px;
+  }
+  
+  .third-card {
+    width: 25%;
+    margin-right: 5%;
+  }
 }
