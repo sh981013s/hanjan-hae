@@ -349,7 +349,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 10% 10% 10% 10%;
+  height: 100%;
 }
 
 .third-card {
@@ -361,5 +362,12 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 16%;
+  margin-bottom: 5%;
+}
+
+.third-card p {
+  margin-bottom: 5%;
+  text-align: center;
+  line-height: 1.2;
 }
 
