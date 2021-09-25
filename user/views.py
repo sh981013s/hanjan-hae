@@ -13,7 +13,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 @csrf_exempt 
 def register(request):
     if request.method == 'GET':
-        return render(request, 'user/register.html')
+        return render(request, 'user/sign_up.html')
     elif request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -32,10 +32,10 @@ def register(request):
             )
 
             normaluser.save()
-            return render(request, 'main/home.html', res_data)
+            return render(request, 'base/index.html', res_data)
 
 
-    return render(request, 'user/register.html', res_data)
+    return render(request, 'user/sign_up.html', res_data)
 
 # 로그인 
 
@@ -50,10 +50,10 @@ def login(request):
             auth.login(request, normaluser)
             return redirect('/')
         else:
-            return render(request, 'user/login.html', {'error':'아이디 혹은 비밀번호가 다릅니다.'})
+            return render(request, 'user/sign_in.html', {'error':'아이디 혹은 비밀번호가 다릅니다.'})
 
     else:
-        return render(request, 'user/login.html')
+        return render(request, 'user/sign_in.html')
 
 # 로그아웃 
 

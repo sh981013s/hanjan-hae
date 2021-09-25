@@ -1,0 +1,85 @@
+{% extends '../base/base.html' %}
+
+{% load static %}
+
+{% block title %}
+회원가입
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="register">
+        <input class="c-checkbox" type="checkbox" id="start">
+        <input class="c-checkbox" type="checkbox" id="progress2">
+        <input class="c-checkbox" type="checkbox" id="progress3">
+        <input class="c-checkbox" type="checkbox" id="finish">
+        <div class="c-form__progress"></div>
+        
+        <div class="c-formContainer">
+          <div class="c-welcome">Welcome aboard!</div>
+          <form class="c-form" method="POST" action=".">
+            <!-- {% csrf_token %} -->
+            <div class="c-form__group">
+              <label class="c-form__label" for="username">
+                            <input
+                                type="text"
+                                name='username'
+                                id="username"
+                                class="c-form__input"
+                                placeholder="희망 사용자 아이디"
+                                required>
+        
+                            <label class="c-form__next" for="progress2" role="button">
+                                <span class="c-form__nextIcon"></span>
+                            </label>
+        
+              <b class="c-form__border"></b>
+              </label>
+            </div>
+        
+            <div class="c-form__group">
+              <label class="c-form__label" for="femail">
+                            <input
+                                type="password"
+                                name='password'
+                                id="password"
+                                class="c-form__input"
+                                placeholder="희망 비밀번호"
+                                required>
+        
+                            <label class="c-form__next" for="progress3" role="button">
+                                <span class="c-form__nextIcon"></span>
+                            </label>
+        
+              <b class="c-form__border"></b>
+              </label>
+            </div>
+        
+            <div class="c-form__group">
+              <label class="c-form__label" for="fpass">
+                            <input
+                                type="password"
+                                name='re_password'
+                                id="re_password"
+                                class="c-form__input"
+                                placeholder="비밀번호 재입력"
+                                required>
+
+                            <label class="c-form__next" for="finish" role="button">
+                                <input type="submit" value="done">
+                                </input>
+                            </label>
+        
+              <b class="c-form__border"></b>
+              </label>
+            </div>
+        
+            <label class="c-form__toggle" for="start">회원가입<span class="c-form__toggleIcon"></span></label>
+          </form>
+        </div>
+    </div>
+
+
+{% endblock %}
