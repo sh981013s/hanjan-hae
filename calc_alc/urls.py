@@ -15,14 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from main import views, urls
-
-
+import calc_alc.views as views
 
 urlpatterns = [
-    path('', include('main.urls', namespace='index')),
-    path('admin/', admin.site.urls),
-    path("user/", include("user.urls")),
-    path("alcohol/", include("calc_alc.urls")),
-    
+    path("", views.home, name="home" ),
+    path("search/", views.searchAlc, name ="search")
+
 ]

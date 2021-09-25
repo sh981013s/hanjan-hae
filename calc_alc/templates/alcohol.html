@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var bool=false;
+        function handleSelectAlc(e){
+            let rawSelected = e.value;
+            let splitedSelected=rawSelected.split('/');
+
+            document.getElementById('drink').value=splitedSelected[0];
+            document.getElementById('alc').value=splitedSelected[1];
+        }
+        function compAlc(listAlc, test){
+            nowDrink = Number(document.getElementById('drink').value);
+            nowAlc = Number(document.getElementById('alc').value);
+            nowCalc = Number(nowDrink*nowAlc*0.00008);
+            
+            for (a in  alc_arr){
+                a.value =  nowCalc/Number(a.alc);
+                document.getElementById('pTag').innerText = a.value;
+                
+            }
+            return nowCalc/(listAlc*alc);
+        }
+        function calculator(drink, alc){
+            return Number(drink*alc*0.00008);
+        }
+
+        let alc_arr = [
+            {name:"참이슬", alc:"20.1", value: ""},
+            {name:"카스 프레시", alc="4.5", value=""},
+        ]
+        
+        
+    </script>
+</head>
+<body>
+    
+    <!-- <form action="{%url 'search' %} method="POST"> -->
+        {% csrf_token %}
+        <select onchange="handleSelectAlc(this)" id="selector" name="alc_type">
+            {%for a in alcohol%}
+            <option value="{{a.cup}}/{{a.alc}} "}>{{a.name}}</option>
+            {% endfor %}
+        </select>
+        <input id="drink" type="text" placeholder="마신양(ml)">
+        <input id="alc" type="text" placeholder="도수(ml)">
+        <button onclick="compAlc(this,'{{a.name}}/{{a.cup}}/{{a.alc}}')">변환</button>
+    <!-- </form> -->
+    <hr>
+
+    <h3>지금까지 마신 술은 이정도예요!</h3>
+    <table>
+        <tr>
+            <th>술 이름</th>
+            <th>도수</th>
+            <th>마신 양</th>
+        </tr>
+        <!-- {%for a in alcohol%}
+            <tr id = "showTr">
+                <td>{{a.name}}</td>
+                <td name="showAlc">{{a.alc}}</td>
+                <td name="showCalcD"></td>
+            </tr>
+        {% endfor%} -->
+        
+    </table>
+    
+    <p id="pTag">음?</p>
+</body>
+
+</html>
