@@ -70,6 +70,12 @@ def logout(request):
 def mypage(request):
     return render(request, "user/mypage.html")
 
+# test
+# from calc_alc import views as calView
+# def alcohol(request):
+#     calView.home(request)
+#     return render(request, "translation/alcohol_translation.html")
+
 # 비밀번호 변경 
 
 def change_pw(request):

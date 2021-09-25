@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from calc_alc import views as cV
 
 
 
@@ -13,4 +14,6 @@ urlpatterns = [
     path('change_pw/', views.change_pw, name='change_pw'),
     path('farewell/', views.userDelete, name="delete_success"),
     path('signout/', views.signout, name='signout'),
+    path('alcohol/', cV.home, name='alcohol'),
+
 ]
