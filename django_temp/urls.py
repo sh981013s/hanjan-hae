@@ -23,4 +23,6 @@ urlpatterns = [
     path('', include('main.urls', namespace='index')),
     path('admin/', admin.site.urls),
     path("user/", include("user.urls")),
+    path('community/', include("community.urls")),
+    path('todaylog/', include("todaylog.urls")),
 ]
