@@ -19,7 +19,7 @@ html {
   cursor: url(../cursor/cursor.cur), auto;
   position: relative;
   font-size: 12px;
-  background-color: #E6DDE9;
+  background-color: #202424;
 }
 
 body {
@@ -30,12 +30,12 @@ body {
   font-family: 'nanum';
   position: relative;
   overflow-y: hidden;
-  background-color: #E1D1E9;
+  background-color: #5C6366;
 }
 
 .topnav {
   overflow: hidden;
-  background-color: #EAC3FA;
+  background-color: #373939;
 }
 
 .topnav a {
@@ -49,7 +49,7 @@ body {
 }
 
 .active {
-  background-color: #EAC3FA;
+  background-color: #373939;
   color: white;
 }
 
@@ -186,6 +186,8 @@ body {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
+  color: #fff;
+  text-shadow: -1px 0 #FED36E, 0 1px #FED36E, 1px 0 #FED36E, 0 -1px #FED36E;
 }
 
 .sub-title {
@@ -220,7 +222,7 @@ body {
   height: 13vmin;
   top: 8vmin;
   left: 13vmin;
-  background: #E1D1E9;
+  background: #5C6366;
   border-radius: 19%;
 }
 .beer {
@@ -388,6 +390,7 @@ body {
   text-align: center;
   line-height: 1.2;
   height: 10vh;
+  color: #000;
 }
 
 /* footer */
@@ -395,7 +398,7 @@ body {
 
 .toaster {
   width: 100vw;
-  background-color: #02324a;
+  background-color: #373939;
   color: #fff;
   position: absolute;
   bottom: 0;
