@@ -8,5 +8,7 @@ def index(request):
 def tmp(request):
     return render(request, "./community/write.html")
 
+def past(request):
+    return render(request, "./community/list.html")
 
 
