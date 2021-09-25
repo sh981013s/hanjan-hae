@@ -5,6 +5,6 @@ app_name = 'main'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('1', views.index, name='sign'),
+    path('kk', views.tmp, name='tmp'),
 
 ]
