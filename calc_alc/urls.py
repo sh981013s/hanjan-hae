@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 import calc_alc.views as views
 
+
 urlpatterns = [
     path("", views.home, name="home" ),
     path("search/", views.searchAlc, name ="search")
