@@ -44,7 +44,7 @@
     {% if user.is_authenticated %}
     <a href="#about">{{user.username}} 님 반갑습니다!</a>
     <a href="{% url 'user:logout' %}">로그아웃</a>
-    <a href="{% url 'user:mypage' %}">마이페이지</a>
+    <!-- <a href="{% url 'user:mypage' %}">마이페이지</a> -->
     {% else %}
     <a style="color:white;" href="{% url 'user:login' %}">로그인</a>
     <a style="color:white;" href="{% url 'user:register' %}">회원가입</a>
