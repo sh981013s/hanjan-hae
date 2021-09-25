@@ -1,65 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <link href="css/community_write.css" rel="stylesheet">
-    <link href="css/alcohol_translation.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <title>한잔 해</title>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title%}한잔 해{% endblock %}</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}"/>
+  <!-- font awesome -->
+  <script defer src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+  <!-- reset -->
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/reset.css' %}" />
+  <!-- w3 css-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,500&display=swap">
+  <!-- style -->
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}" />
+  <!-- w3 js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- js -->
+  <script defer src="https://unpkg.com/typeit@8.0.2/dist/index.umd.js"></script>
+  <script defer src="{% static 'js/app.js' %}"></script>
+  <!-- style -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link href="css/alcohol_translation.css" rel="stylesheet">
+  <link href="css/community_write.css" rel="stylesheet">
+
 </head>
+
 <body>
+
+
+<div class="container">
+
+  <!-- nav -->
+
+  <nav class="topnav" id="myTopnav">
+    <a href="{% url 'main:index' %}" class="active">Home</a>
+    <a href="#news">Feeds</a>
+    <a href="#contact">Alocohol converter</a>
+    <div class="dropdown">
+      <button class="dropbtn">Dropdown 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div> 
+    <a href="#about">오늘의 기록</a>
+
+    {% if user.is_authenticated %}
+    <a href="#about">{{user.username}} 님 반갑습니다!</a>
+    <a href="{% url 'user:logout' %}">로그아웃</a>
+    <a href="{% url 'user:mypage' %}">마이페이지</a>
+    {% else %}
+    <a style="color:white;" href="{% url 'user:login' %}">로그인</a>
+    <a style="color:white;" href="{% url 'user:register' %}">회원가입</a>
+    {% endif %}
+    
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </nav>
+
+    <script>
+        function compAlc(){
+            drink = document.getElementById('drink').value;
+            drunkenType = document.getElementById('selectDataList').value.split("/")[1];
+            resultType = document.getElementById('resultDataList').value.split("/")[1];
+            
+            document.getElementById('result').value = calculator((+drink),(+drunkenType),(+resultType));
+        }
+        function calculator(selecteddrink, selectedalc, compAlc){
+            return Number((selecteddrink*selectedalc)/compAlc);
+        }
+
+    </script>
+
     <section>
         <div class="alcohol-translation">
-            <form action="" method="POST">
         <div class="op2">
             <h1>주량 계산</h1><br><br>
             <div class="option_select">
                 <div class="select-option1">
-                    <label for="exampleDataList" class="form-label">카테고리</label>
-                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="종류 선택">
+                    <label for="selectDataList" class="form-label">카테고리</label>
+                    <input class="form-control" list="datalistOptions" id="selectDataList" placeholder="종류 선택">
                         <datalist id="datalistOptions">
-                            <option value="소주">
-                            <option value="맥주">
-                            <option value="양주">
-                            <option value="와인">
-                            <option value="막걸리">
+                            {%for a in alcohol%}
+                            <option value="{{a.name}}/{{a.alc}}"></option>
+                            {% endfor %}                            
                         </datalist>
                 </div>
                 <div class="input-option1">
-                    <label for="how">주량</label>
-                    <input type="text" class="form-control" id="how" placeholder="주량">
+                    <label  for="how">주량</label>
+                    <input type="text" class="form-control" id="drink" placeholder="주량">
                 </div>
             </div>
 
             <div class="butn">
-                <button class="submitBtn" type="submit">변환</button>
+                <button  onclick="compAlc()">변환</button>
             </div>
 
             <div class="option_result">
                 <div class="select_option2">
                     <label for="exampleDataList" class="form-label">카테고리</label>
-                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="종류 선택">
+                    <input class="form-control" list="datalistOptions" id="resultDataList" placeholder="종류 선택">
+                        {% csrf_token %}
                         <datalist id="datalistOptions">
-                            <option value="소주">
-                            <option value="맥주">
-                            <option value="양주">
-                            <option value="와인">
-                            <option value="막걸리">
+                            {%for a in alcohol%}
+                            <option value="{{a.name}}">{{a.alc}}</option>
+                            {% endfor %}             
                         </datalist>
                 </div>
                 <div class="result_option2">
-                    <label for="exampleDataList" class="form-label">주량 변환</label>
-                    <input class="form-control" type="text" value="주량 변환 결과" aria-label="readonly input example" readonly>
+                    <label for="exampleDataList">주량 변환</label>
+                    <input id="result" class="form-control" type="text" value="주량 변환 결과">
                 </div>
             </div>
-            </form>
         </div>
         </div>
     </section>
+<div class="loader">
+    <div class="glass-wrapper">
+        <div class="glass">
+            <div class="beer2">
+                <div class="foam"><span class="foambubble"></span><span class="foambubble"></span><span class="foambubble"></span><span class="foambubble"></span><span class="foambubble"></span></div>
+                <div class="bubbles"><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span><span class="bubble2"></span></div>
+            </div>
+        </div>
+        <div class="foamtop"><span class="ft-bubble"></span><span class="ft-bubble"></span><span class="ft-bubble"></span><span class="ft-bubble"></span></div>
+        <div class="coaster"></div>
+    </div>
+    <div class="disclaimer">
+        <p>👋 Pouring some beer... :)</p>
+    </div>
+    </div>
+
+    <a style = 'display:scroll;position:fixed;bottom:10%;right:1%;color:#fff;font-size:0.5rem;' href="#" title='Top'>
+      Up to top 
+      <span class="iconify" data-icon="carbon:back-to-top" data-inline="false"></span>
+    </a>
+</div>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
+
 </body>
 </html>
