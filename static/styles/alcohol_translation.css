@@ -1,0 +1,21 @@
+.op2{
+    margin: 5% 10% 10% 10% ;
+    text-align: center;
+    width: 80%;
+    float: left;
+}
+.option_select{
+    float:left;
+    width: 33%;
+}
+
+.option_result{
+    float:left;
+    width: 33%;
+}
+
+.butn{
+    float:left;
+    width: 22%;
+    margin: 5%;
+}
