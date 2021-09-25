@@ -13,83 +13,45 @@
 
 {% block content %}
 
-<!-- <div class="write-wrapper">
-    <div class="write">
-        <section>
-            <div class="community-write">
-                <form action="" method="post">
-                    <div class="op1">
-                    <h1>커뮤니티 글 작성</h1><br>
-                    <div class="shit">
-                        <div class="form-check form-switch" style="float: right;">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                            <label class="form-check-label" for="flexSwitchCheckDefault">비공개 설정</label>
-                          </div>
-                    </div><br><br>
-                    <label for="exampleDataList" class="form-label">카테고리</label>
-                        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="종류 선택">
-                            <datalist id="datalistOptions">
-                                <option value="소주">
-                                <option value="맥주">
-                                <option value="양주">
-                                <option value="와인">
-                                <option value="막걸리">
-                            </datalist>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">상세종류</label>
-                        <input type="text" class="form-control" id="detail" placeholder="술의 이름을 적어주세요">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">한줄평가</label>
-                        <input type="text" class="form-control" id="review" placeholder="한줄 평가를 적어주세요"> 
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">피드내용</label>
-                        <textarea class="form-control" id="feed" rows="3"></textarea>
-                    </div>
-                    <div class="write-date">
-                        <label for="date">작성날짜</label>
-                        <input type="date" class="form-control" id="date" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="formFileSm" class="form-label">이미지 첨부</label>
-                        <input class="form-control form-control-sm" id="formFileSm" type="file">
-                    </div>
-                    <br>
-                    <div class="butn">
-                        <button class="submitBtn" type="submit">작성</button>
-                    </div>
-            </div>
-                </form>
-            </div>
-        </section>
-    </div>
-</div> -->
-
 <div class="write-wrapper">
     <div id="wrap" class="input">
         <section class="input-content">
-          <h2>Input Text/Password Animation<span>Only CSS</span></h2>
+          <h2>나만의 기록 작성</h2>
           <div class="input-content-wrap">
             <dl class="inputbox">
-              <dt class="inputbox-title">Input Text</dt>
+                <dt class="inputbox-title">카테고리</dt>
+                <dd class="inputbox-content">
+                  <input id="input0" type="text" required/>
+                  <span class="underline"></span>
+                </dd>
+              </dl>
+            <dl class="inputbox">
+              <dt class="inputbox-title">상세종류</dt>
               <dd class="inputbox-content">
-                <input id="input0" type="text" required/>
-                <label for="input0">ID</label>
+                <input id="input1" type="text" required/>
                 <span class="underline"></span>
               </dd>
             </dl>
             <dl class="inputbox">
-              <dt class="inputbox-title">Input Password</dt>
-              <dd class="inputbox-content">
-                <input id="input1" type="password" required/>
-                <label for="input1">Password</label>
-                <span class="underline"></span>
-              </dd>
-            </dl>
+                <dt class="inputbox-title">한줄평가</dt>
+                <dd class="inputbox-content">
+                  <input id="input2" type="text" required/>
+                  <span class="underline"></span>
+                </dd>
+              </dl>
+              <dl class="inputbox">
+                <dt class="inputbox-title">피드내용</dt>
+                <dd class="inputbox-content">
+                  <input id="input3" type="text" required/>
+                  <span class="underline"></span>
+                </dd>
+              </dl>
+              <dl class="">
+                <input class="form-control form-control-sm" id="formFileSm" type="file">
+              </dl>
             <div class="btns">
-                <button class="btn btn-confirm">Sign In</button>
-                <button class="btn btn-cancel">Cancel</button>
+                <button class="btn btn-confirm">작성</button>
+                <button class="btn btn-cancel">취소</button>
             </div>
           </div>
         </section>
