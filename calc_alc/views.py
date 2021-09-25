@@ -7,7 +7,7 @@ from openpyxl import load_workbook
 import pandas as pd
 
 def excelToModel(request):
-    path = "data\Alcohol_Model.xlsx"
+    path = "data/Alcohol_Model.xlsx"
     reader = pd.read_excel(path, sheet_name = 0, header=0)
     list = []
     for row in reader.to_dict(orient='split').get('data') :

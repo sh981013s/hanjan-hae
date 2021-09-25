@@ -5,6 +5,6 @@ app_name = 'main'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('kk', views.tmp, name='tmp'),
-
+    path('tmp', views.tmp, name='tmp'),
+    path('past', views.past, name='past'),
 ]

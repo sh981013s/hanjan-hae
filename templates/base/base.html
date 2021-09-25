@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title%}한잔 해{% endblock %}</title>
+  <title>{% block title%}한 잠{% endblock %}</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}"/>
   <!-- font awesome -->
@@ -37,20 +37,9 @@
 
   <nav class="topnav" id="myTopnav">
     <a href="{% url 'main:index' %}" class="active">Home</a>
-    <a href="#news">Feeds</a>
+    <a href="{% url 'main:tmp' %}">오늘의 기록</a>
+    <a href="{% url 'todaylog:todaylogMain' %}">과거의 기록</a>
     <a href="#contact">Alocohol converter</a>
-    <div class="dropdown">
-      <button class="dropbtn">Dropdown 
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-    </div> 
-    <a href="#about">오늘의 기록</a>
-
     {% if user.is_authenticated %}
     <a href="#about">{{user.username}} 님 반갑습니다!</a>
     <a href="{% url 'user:logout' %}">로그아웃</a>
