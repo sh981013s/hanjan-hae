@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = '/user/login/'
 
 # Application definition
 
@@ -39,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'main',
+    'community',
+    'todaylog',
 ]
 
 MIDDLEWARE = [
