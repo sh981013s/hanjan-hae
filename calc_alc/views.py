@@ -28,7 +28,7 @@ def home(request):
     if(Alcohol.objects.count()==0):
         excelToModel(request)
     alcohol = Alcohol.objects.all()
-    return render(request, 'alcohol.html',{'alcohol':alcohol})
+    return render(request, '../templates/translation/alcohol_translation.html',{'alcohol':alcohol})
 
 def calculator(drink, alc):
     # 마신 총 알코올양 = (마신양(drink) * 알코올 도수 (alc/100) * 0.8)/100
