@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <link href="css/community_write.css" rel="stylesheet">
+    <link href="css/alcohol_translation.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <title>한잔 해</title>
+</head>
+<body>
+    <section>
+        <div class="alcohol-translation">
+            <form action="" method="POST">
+        <div class="op2">
+            <h1>주량 계산</h1><br><br>
+            <div class="option_select">
+                <div class="select-option1">
+                    <label for="exampleDataList" class="form-label">카테고리</label>
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="종류 선택">
+                        <datalist id="datalistOptions">
+                            <option value="소주">
+                            <option value="맥주">
+                            <option value="양주">
+                            <option value="와인">
+                            <option value="막걸리">
+                        </datalist>
+                </div>
+                <div class="input-option1">
+                    <label for="how">주량</label>
+                    <input type="text" class="form-control" id="how" placeholder="주량">
+                </div>
+            </div>
+
+            <div class="butn">
+                <button class="submitBtn" type="submit">변환</button>
+            </div>
+
+            <div class="option_result">
+                <div class="select_option2">
+                    <label for="exampleDataList" class="form-label">카테고리</label>
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="종류 선택">
+                        <datalist id="datalistOptions">
+                            <option value="소주">
+                            <option value="맥주">
+                            <option value="양주">
+                            <option value="와인">
+                            <option value="막걸리">
+                        </datalist>
+                </div>
+                <div class="result_option2">
+                    <label for="exampleDataList" class="form-label">주량 변환</label>
+                    <input class="form-control" type="text" value="주량 변환 결과" aria-label="readonly input example" readonly>
+                </div>
+            </div>
+            </form>
+        </div>
+        </div>
+    </section>
+</body>
+</html>
