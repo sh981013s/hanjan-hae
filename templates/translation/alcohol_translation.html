@@ -64,72 +64,47 @@
     </nav>
 
     <script>
-        // Constants
-        let alc_arr = [
-            {name:"참이슬", alc:"20.1", value: ""},
-            {name:"카스 프레시", alc="4.5", value=""},
-        ]
-
-        // Attribute
-        var bool=false;
-
-        // function handleSelectAlc(e){
-        //     let rawSelected = e.value;
-        //     let splitedSelected=rawSelected.split('/');
-
-        //     document.getElementById('drink').value=splitedSelected[0];
-        //     document.getElementById('alc').value=splitedSelected[1];
-        // }
-        function compAlc(listAlc){
-            tmp = document.getElementById('datalistOptions').options;
-
-            // nowDrink = Number(document.getElementById('drink').value);
-            // nowAlc = Number(document.getElementById('alc').value);
-            // nowCalc = Number(nowDrink*nowAlc*0.00008);
+        function compAlc(){
+            drink = document.getElementById('drink').value;
+            drunkenType = document.getElementById('selectDataList').value.split("/")[1];
+            resultType = document.getElementById('resultDataList').value.split("/")[1];
             
-            // for (a in  alc_arr){
-            //     a.value =  nowCalc/Number(a.alc);
-            //     document.getElementById('pTag').innerText = a.value;
-                
-            // }
-            document.getElementById('result').value = tmp;
-            return nowCalc/(listAlc*alc);
+            document.getElementById('result').value = calculator((+drink),(+drunkenType),(+resultType));
         }
-        function calculator(drink, alc){
-            return Number(drink*alc*0.00008);
+        function calculator(selecteddrink, selectedalc, compAlc){
+            return Number((selecteddrink*selectedalc)/compAlc);
         }
 
     </script>
 
     <section>
         <div class="alcohol-translation">
-            <form action="" method="POST">
         <div class="op2">
             <h1>주량 계산</h1><br><br>
             <div class="option_select">
                 <div class="select-option1">
-                    <label for="exampleDataList" class="form-label">카테고리</label>
-                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="종류 선택">
+                    <label for="selectDataList" class="form-label">카테고리</label>
+                    <input class="form-control" list="datalistOptions" id="selectDataList" placeholder="종류 선택">
                         <datalist id="datalistOptions">
                             {%for a in alcohol%}
-                            <option value="{{a.name}}">{{a.alc}}</option>
+                            <option value="{{a.name}}/{{a.alc}}"></option>
                             {% endfor %}                            
                         </datalist>
                 </div>
                 <div class="input-option1">
-                    <label id="drink"  for="how">주량</label>
-                    <input type="text" class="form-control" id="how" placeholder="주량">
+                    <label  for="how">주량</label>
+                    <input type="text" class="form-control" id="drink" placeholder="주량">
                 </div>
             </div>
 
             <div class="butn">
-                <button  onclick="compAlc(this)">변환</button>
+                <button  onclick="compAlc()">변환</button>
             </div>
 
             <div class="option_result">
                 <div class="select_option2">
                     <label for="exampleDataList" class="form-label">카테고리</label>
-                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="종류 선택">
+                    <input class="form-control" list="datalistOptions" id="resultDataList" placeholder="종류 선택">
                         {% csrf_token %}
                         <datalist id="datalistOptions">
                             {%for a in alcohol%}
@@ -139,10 +114,9 @@
                 </div>
                 <div class="result_option2">
                     <label for="exampleDataList">주량 변환</label>
-                    <input id="result" class="form-control" type="text" value="주량 변환 결과" aria-label="readonly input example" readonly>
+                    <input id="result" class="form-control" type="text" value="주량 변환 결과">
                 </div>
             </div>
-            </form>
         </div>
         </div>
     </section>
